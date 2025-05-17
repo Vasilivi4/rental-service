@@ -9,15 +9,22 @@ User = get_user_model()
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['id', 'email', 'first_name', 'last_name', 'date_joined',]
+        fields = [
+            "id",
+            "email",
+            "first_name",
+            "last_name",
+            "date_joined",
+        ]
+
 
 class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
     def get_token(cls, user):
         token = super().get_token(user)
-        token['email'] = user.email
+        token["email"] = user.email
         return token
 
     def validate(self, attrs):
-        attrs['username'] = attrs.get('email')
+        attrs["username"] = attrs.get("email")
         return super().validate(attrs)
