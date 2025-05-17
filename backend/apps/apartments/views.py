@@ -6,6 +6,7 @@ from django_filters.rest_framework import (
     BooleanFilter,
     CharFilter,
 )
+from django.db import models
 from .models import Apartment
 from .serializers import ApartmentSerializer
 from .permissions import IsOwnerOrReadOnly
@@ -24,7 +25,8 @@ class ApartmentFilter(FilterSet):
 
     def filter_search(self, queryset, name, value):
         return queryset.filter(
-            models.Q(name__icontains=value) | models.Q(description__icontains=value)
+            models.Q(name__icontains=value) |
+            models.Q(description__icontains=value)
         )
 
 
@@ -32,10 +34,13 @@ class ApartmentViewSet(viewsets.ModelViewSet):
     queryset = Apartment.objects.all().order_by("-created_at")
     serializer_class = ApartmentSerializer
     lookup_field = "slug"
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly]
+    permission_classes = [
+        permissions.IsAuthenticatedOrReadOnly,
+        IsOwnerOrReadOnly
+    ]
     filter_backends = [DjangoFilterBackend]
     filterset_class = ApartmentFilter
-    pagination_class = None  # можна підключити стандартну пагінацію
+    pagination_class = None
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
