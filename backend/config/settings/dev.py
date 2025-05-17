@@ -1,4 +1,4 @@
-from .base import env, DATABASES, INSTALLED_APPS, REST_FRAMEWORK
+from .base import *
 import socket
 
 # Debug mode
