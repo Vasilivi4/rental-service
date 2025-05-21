@@ -142,6 +142,10 @@ CORS_ALLOWED_ORIGIN_REGEXES = [
     r"^http://localhost:\d+$",
     r"^https://localhost:\d+$",
 ]
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+]
+
 
 # Email
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
