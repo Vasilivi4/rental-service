@@ -160,3 +160,7 @@ CELERY_RESULT_BACKEND = env("CELERY_RESULT_BACKEND", default="redis://localhost:
 CELERY_ACCEPT_CONTENT = ["json"]
 CELERY_TASK_SERIALIZER = "json"
 CELERY_RESULT_SERIALIZER = "json"
+
+AUTHENTICATION_BACKENDS = [
+    'apps.users.backends.EmailBackend',  # твой кастомный backend
+]

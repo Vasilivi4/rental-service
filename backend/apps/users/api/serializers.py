@@ -19,12 +19,18 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
+    def validate(self, attrs):
+        # Подменяем username на email
+        attrs["username"] = attrs.get("email")
+        return super().validate(attrs)
+
     @classmethod
     def get_token(cls, user):
         token = super().get_token(user)
         token["email"] = user.email
         return token
 
-    def validate(self, attrs):
-        attrs["username"] = attrs.get("email")
-        return super().validate(attrs)
+    # ВАЖНО: явно указываем поля, иначе будет использовать стандартные
+    class Meta:
+        model = User
+        fields = ('email', 'password')

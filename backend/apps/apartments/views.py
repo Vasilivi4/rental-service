@@ -33,7 +33,6 @@ class ApartmentFilter(FilterSet):
 class ApartmentViewSet(viewsets.ModelViewSet):
     queryset = Apartment.objects.all().order_by("-created_at")
     serializer_class = ApartmentSerializer
-    lookup_field = "slug"
     permission_classes = [
         permissions.IsAuthenticatedOrReadOnly,
         IsOwnerOrReadOnly
@@ -41,6 +40,7 @@ class ApartmentViewSet(viewsets.ModelViewSet):
     filter_backends = [DjangoFilterBackend]
     filterset_class = ApartmentFilter
     pagination_class = None
+    lookup_field = 'slug'
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
