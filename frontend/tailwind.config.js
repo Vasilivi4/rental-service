@@ -1,7 +1,8 @@
-export default {
-  content: ["./index.html", "./src/**/*.{vue,js,ts}"],
+module.exports = {
+  content: ['./index.html', './src/**/*.{vue,js,ts}'],
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [  require('@tailwindcss/forms'),
+  require('@tailwindcss/line-clamp'),],
 }

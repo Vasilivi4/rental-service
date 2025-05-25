@@ -1,7 +1,4 @@
 @import "./base.css";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 #app {
   max-width: 1280px;
@@ -35,4 +32,7 @@ a,
     grid-template-columns: 1fr 1fr;
     padding: 0 2rem;
   }
+}
+.fon {
+  background: rgba(181, 196, 180, 0.468)
 }
