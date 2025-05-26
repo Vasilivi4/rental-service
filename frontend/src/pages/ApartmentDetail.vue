@@ -1,6 +1,6 @@
 <template>
 
-  <div class="fon">
+  <div class="font">
     <div class="bg-white/70 p-4 rounded-lg shadow-inner">
       <div v-if="apartment">
         <h1 class="text-2xl font-bold">{{ apartment.name }}</h1>
