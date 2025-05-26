@@ -8,7 +8,7 @@
         <p>Ціна: {{ apartment.price }}</p>
         <p>Кімнат: {{ apartment.number_of_rooms }}</p>
         <p>Площа: {{ apartment.square }} м²</p>
-        <p>Доступність: {{ apartment.available ? 'Так' : 'Ні' }}</p>
+        <p>Доступність: {{ apartment.availability ? 'Так' : 'Ні' }}</p>
       </div>
       <div v-else>
         <p>Квартиру не знайдено.</p>
