@@ -59,7 +59,6 @@
 }
 
 body {
-  background-image: url('https://images.unsplash.com/photo-1502672260266-1c1ef2d93688');
   min-height: 100vh;
   color: var(--color-text);
   background: var(--color-background);
