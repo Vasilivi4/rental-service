@@ -23,6 +23,7 @@ a,
 
 @media (min-width: 1024px) {
   body {
+    background-image: url('https://images.unsplash.com/photo-1502672260266-1c1ef2d93688');
     display: flex;
     place-items: center;
   }
@@ -34,5 +35,9 @@ a,
   }
 }
 .fon {
-  background: rgba(181, 196, 180, 0.468)
+  background: rgba(182, 94, 91, 0.208)
+}
+
+.font {
+  background: rgba(166, 237, 166, 0.614)
 }
