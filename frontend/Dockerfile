@@ -1,4 +1,3 @@
-# Development stage
 FROM node:22.14-slim AS dev
 
 WORKDIR /app
