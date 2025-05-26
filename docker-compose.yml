@@ -24,15 +24,19 @@ services:
       - backend
 
   postgres:
-    image: postgres:17.4
+    image: postgres:17
     env_file: ./backend/.env
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    ports:
+    - "5432:5432"
 
   redis:
     image: redis:alpine
     volumes:
       - redis_data:/data
+    ports:
+    - "6379:6379"
 
   celery:
     build: ./backend
