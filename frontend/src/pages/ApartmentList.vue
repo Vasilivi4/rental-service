@@ -44,7 +44,7 @@
         Квартир не знайдено.
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="font grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div
           v-for="apartment in apartments"
           :key="apartment.slug"
