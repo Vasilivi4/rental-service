@@ -49,7 +49,7 @@
           v-for="apartment in apartments"
           :key="apartment.slug"
           class="p-5 bg-white bg-opacity-80 rounded-xl shadow hover:shadow-lg transition duration-300 relative"
-          :class="{ 'opacity-50 grayscale blur-sm': apartment.available === false }"
+          :class="{ 'opacity-50 grayscale blur-sm': apartment.availability === false }"
         >
           <router-link
             :to="`/apartments/${apartment.slug}`"
@@ -63,8 +63,8 @@
 
           <span
             class="absolute top-3 right-3 text-xs px-2 py-1 rounded-full"
-            :class="apartment.available ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'">
-            {{ apartment.available ? 'Доступна' : 'Недоступна' }}
+            :class="apartment.availability ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'">
+            {{ apartment.availability ? 'Доступна' : 'Недоступна' }}
           </span>
         </div>
       </div>
