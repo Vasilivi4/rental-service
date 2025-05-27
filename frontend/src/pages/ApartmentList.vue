@@ -44,7 +44,7 @@
         Квартир не знайдено.
       </div>
 
-      <div class="font grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="font ps-3 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div
           v-for="apartment in apartments"
           :key="apartment.slug"
@@ -53,7 +53,7 @@
         >
           <router-link
             :to="`/apartments/${apartment.slug}`"
-            class="block text-xl font-bold text-blue-700 hover:underline mb-2"
+            class="block text-xl font-bold text-blue-700 hover:underline ps-"
           >
             {{ apartment.name }}
           </router-link>
